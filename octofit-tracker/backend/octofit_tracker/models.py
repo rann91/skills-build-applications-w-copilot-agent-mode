@@ -7,7 +7,7 @@ class User(models.Model):
 
 class Team(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    members = models.ArrayReferenceField(to=User, on_delete=models.CASCADE)
+    members = models.ArrayReferenceField(to=User, on_delete=models.CASCADE, related_name='team_members')
 
 class Activity(models.Model):
     user = models.CharField(max_length=150)
